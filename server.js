@@ -1,7 +1,10 @@
 //setup Dependencies
 var connect = require('connect')
     , express = require('express')
+    , routes = require('./routes')
+    , reviews = require('./routes/reviews')
     , io = require('socket.io')
+    , hbsPrecompiler = require('handlebars-precompiler')
     , port = (process.env.PORT || 3000);
 
 //Setup Express
@@ -13,7 +16,13 @@ server.configure(function(){
     server.use(express.cookieParser());
     server.use(express.session({ secret: "shhhhhhhhh!"}));
     server.use(connect.static(__dirname + '/static'));
+    server.use('/node_modules', connect.static('node_modules'));
     server.use(server.router);
+    hbsPrecompiler.watchDir(
+        __dirname + "/views",
+        __dirname + "/static/js/templates.js",
+        ['handlebars', 'hbs']
+    );
 });
 
 //setup the errors
@@ -57,16 +66,8 @@ io.sockets.on('connection', function(socket){
 
 /////// ADD ALL YOUR ROUTES HERE  /////////
 
-server.get('/', function(req,res){
-  res.render('index.jade', {
-    locals : { 
-              title : 'Your Page Title'
-             ,description: 'Your Page Description'
-             ,author: 'Paul Vaughan'
-             ,analyticssiteid: 'UA-38061682-1'
-            }
-  });
-});
+server.get('/', routes.index);
+server.get('/reviews', reviews.reviews);
 
 
 //A Route for Creating a 500 Error (Useful to keep around)

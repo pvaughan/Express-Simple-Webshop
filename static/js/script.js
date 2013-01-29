@@ -12,4 +12,13 @@ $(document).ready(function() {
   socket.on('server_message', function(data){
    $('#receiver').append('<li>' + data + '</li>');  
   });
+
+    $("#myCarousel").swiperight(function() {
+        $("#myCarousel").carousel('prev');
+    });
+
+    $("#myCarousel").swipeleft(function() {
+        $("#myCarousel").carousel('next');
+    });
+
 });

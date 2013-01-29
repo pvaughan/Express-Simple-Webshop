@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    .container
+        h1= title
+
+        form
+            input(type='text', placeholder='Title')
+            input(type='text', placeholder='Text')
+            p
+            button.btn(type='button', id='form1') Add Review
+        p
+        div(id="items")
+
+    script(defer, src='/node_modules/backbone/node_modules/underscore/underscore-min.js')
+    script(defer, src='/node_modules/backbone/backbone-min.js')
+    script(defer, src='/node_modules/handlebars/dist/handlebars.js')
+    script(defer, src='/js/templates.js')
+    script(defer, src='/js/view-reviews.js')
