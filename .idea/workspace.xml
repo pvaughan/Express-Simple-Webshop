@@ -1,26 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" name="Default" comment="added content">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/bootstrap-carousel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/jquery.mobile.custom.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/review.hbs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/reviews.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/templates.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layout.jade" afterPath="$PROJECT_DIR$/views/layout.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/reviews.jade" afterPath="$PROJECT_DIR$/views/reviews.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/script.js" afterPath="$PROJECT_DIR$/static/js/script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/style.css" afterPath="$PROJECT_DIR$/static/css/style.css" />
+    <list default="true" id="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/layout.jade" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1359489165945" ignored="false" />
     <file path="/index.jade" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1359478210651" ignored="false" />
-    <file path="/Dummy.txt" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1359500189484" ignored="false" />
+    <file path="/Dummy.txt" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1359500263474" ignored="false" />
     <file path="/server.js" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1359492413316" ignored="false" />
     <file path="/reviews.js" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1359480030131" ignored="false" />
     <file path="$PROJECT_DIR$/../NodeApp/.idea/workspace.xml" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1359489551385" ignored="false" />
@@ -433,7 +421,11 @@
       <created>1359479483695</created>
       <updated>1359479483695</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added content">
+      <created>1359500270707</created>
+      <updated>1359500270707</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
