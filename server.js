@@ -2,7 +2,7 @@
 var connect = require('connect')
     , express = require('express')
     , io = require('socket.io')
-    , port = (process.env.PORT || 8081);
+    , port = (process.env.PORT || 3000);
 
 //Setup Express
 var server = express.createServer();
@@ -22,15 +22,15 @@ server.error(function(err, req, res, next){
         res.render('404.jade', { locals: { 
                   title : '404 - Not Found'
                  ,description: ''
-                 ,author: ''
-                 ,analyticssiteid: 'XXXXXXX' 
+                 ,author: 'Paul Vaughan'
+                 ,analyticssiteid: 'UA-38061682-1'
                 },status: 404 });
     } else {
         res.render('500.jade', { locals: { 
                   title : 'The Server Encountered an Error'
-                 ,description: ''
-                 ,author: ''
-                 ,analyticssiteid: 'XXXXXXX'
+                 ,description: 'Test webapp with express and backbone'
+                 ,author: 'Paul Vaughan'
+                 ,analyticssiteid: 'UA-38061682-1'
                  ,error: err 
                 },status: 500 });
     }
@@ -62,8 +62,8 @@ server.get('/', function(req,res){
     locals : { 
               title : 'Your Page Title'
              ,description: 'Your Page Description'
-             ,author: 'Your Name'
-             ,analyticssiteid: 'XXXXXXX' 
+             ,author: 'Paul Vaughan'
+             ,analyticssiteid: 'UA-38061682-1'
             }
   });
 });

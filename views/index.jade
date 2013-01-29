@@ -1,6 +1,52 @@
 extends layout
 
 block content
-	div
-		a(id='sender')='Send a Message'
-		ul(id='receiver')
+    .container
+        #myCarousel.carousel.slide
+            .carousel-inner
+                .item.active
+                  img(src='images/California231.jpg', alt='')
+                  .carousel-caption
+                    h4 California 2012
+                    p
+                      | View over the surf at Pacifica south of San Francisco.
+                .item
+                  img(src='images/California226.jpg', alt='')
+                  .carousel-caption
+                    h4 California 2012
+                    p
+                      | Golden gate bridge over San Francisco bay
+                .item
+                  img(src='images/California201.jpg', alt='')
+                  .carousel-caption
+                    h4 California 2012
+                    p
+                      | Morning view over Yosemite park valley
+              a.left.carousel-control(href='#myCarousel', data-slide='prev') ‹
+              a.right.carousel-control(href='#myCarousel', data-slide='next') ›
+
+          //
+             Example row of columns
+        .container-marketing
+          .row
+            .span4
+              h2 Send a Message
+              p
+                a.btn(id='sender')='Send'
+              p
+                ul(id='receiver')
+
+            .span4
+              h2 Heading
+              p
+                | Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+              p
+                a.btn(href='#') View details »
+            .span4
+              h2 Heading
+              p
+                | Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+              p
+                a.btn(href='#') View details »
+          hr
+    div.container
