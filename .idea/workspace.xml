@@ -2,13 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/images/apple-touch-icon-ipad.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/images/apple-touch-icon-ipad3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/images/apple-touch-icon-iphone.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/images/apple-touch-icon-iphone4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/images/glyphicons-halflings-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/images/glyphicons-halflings.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/images/honeymoon.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/images/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/twitter-bootstrap/bootstrap-alert.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/twitter-bootstrap/bootstrap-button.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/twitter-bootstrap/bootstrap-collapse.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/twitter-bootstrap/bootstrap-dropdown.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/twitter-bootstrap/bootstrap-modal.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/twitter-bootstrap/bootstrap-popover.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/bootstrap-responsive.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/bootstrap-responsive.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/twitter-bootstrap/bootstrap-scrollspy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/twitter-bootstrap/bootstrap-tab.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/twitter-bootstrap/bootstrap-tooltip.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/twitter-bootstrap/bootstrap-transition.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/twitter-bootstrap/bootstrap-typeahead.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/bootstrap.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/twitter-bootstrap/bootstrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/twitter-bootstrap/bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/twitter-bootstrap/holder.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/jquery-1.9.0.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/jquery.form.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/modernizr-2.6.2.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/mysqlDB.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/plugins.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/pvaughan.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/templates.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/test.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/view-reviews.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/layout.jade" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1367433501753" ignored="false" />
     <file path="/index.jade" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1366475667626" ignored="false" />
-    <file path="/Dummy.txt" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1367525711292" ignored="false" />
+    <file path="/Dummy.txt" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1367525779798" ignored="false" />
     <file path="/server.js" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1359492413316" ignored="false" />
     <file path="/reviews.js" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1367432950328" ignored="false" />
     <file path="$PROJECT_DIR$/../NodeApp/.idea/workspace.xml" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1359489551385" ignored="false" />
@@ -635,7 +670,11 @@
       <created>1367525724903</created>
       <updated>1367525724903</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Lost of stuff :)">
+      <created>1367525784409</created>
+      <updated>1367525784409</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers>
       <GitHub shared="false">
         <commitMessageFormat>{id} {summary}</commitMessageFormat>
