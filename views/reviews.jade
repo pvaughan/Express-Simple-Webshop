@@ -1,19 +1,20 @@
-extends layout
 
 block content
-    .container
+    .container.content
         h1= title
 
-        form
-            input(type='text', placeholder='Title')
-            input(type='text', placeholder='Text')
+        form(class='add-item-form')
+            input(type='text', placeholder='Title', name='Name')
+            input(type='text', placeholder='Text', name='Description')
             p
-            button.btn(type='button', id='form1') Add Review
+            input(type='file', id='itemPhoto', name='photoFile', multiple='false')
+            p
+            input(type='submit', class='btn', value = 'Add Item')
         p
-        div(id="items")
 
-    script(defer, src='/node_modules/backbone/node_modules/underscore/underscore-min.js')
-    script(defer, src='/node_modules/backbone/backbone-min.js')
-    script(defer, src='/node_modules/handlebars/dist/handlebars.js')
+        div(class='span9')
+            div(id="items", class="row-fluid")
+
+
     script(defer, src='/js/templates.js')
     script(defer, src='/js/view-reviews.js')

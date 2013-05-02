@@ -1,0 +1,40 @@
+<div class="form_box">
+    <form class="form-horizontal confirm-attendance-form">
+    <fieldset>
+
+    <!-- Form Name -->
+    <legend>Stap 2 - Bevestig de uitnodiging</legend>
+
+    <!-- Select Basic -->
+    <div class='row'>
+     {{#each []}}
+       <input type="hidden" id="user_id" name="user_id" value="{{this.ID}}"/>
+    <div class="control-group">
+      <label class="control-label">{{this.Name}} {{this.Surname}}</label>
+      <div class="controls">
+        <select id="dropd_attend" name="dropd_attend" class="input-large">
+          <option value="1">Wel aanwezig</option>
+          <option value="0">Niet aanwezig</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Textarea -->
+    <div class="control-group">
+      <label class="control-label">Dieetwensen</label>
+      <div class="controls">
+        <textarea id="text_diet" name="text_diet"></textarea>
+      </div>
+    </div>
+     {{/each}}
+
+    <!-- Button -->
+    <div class="control-group">
+      <label class="control-label"></label>
+      <div class="controls">
+        <button id="btn_Send" name="btn_Send" class="btn btn-purple">Bevestig</button>
+      </div>
+    </div>
+
+    </form>
+</div>

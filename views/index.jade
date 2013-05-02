@@ -5,48 +5,54 @@ block content
         #myCarousel.carousel.slide
             .carousel-inner
                 .item.active
-                  img(src='images/California231.jpg', alt='')
-                  .carousel-caption
-                    h4 California 2012
-                    p
-                      | View over the surf at Pacifica south of San Francisco.
+                    img(src='images/senl04.jpg', alt='')
+                      //.container
+                      //    .carousel-caption
+                      //        h1 Example headline.
+                      //        p(class="lead") Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                      //        a(class="btn btn-large btn-primary", href="#") Sign up today
                 .item
-                  img(src='images/California226.jpg', alt='')
-                  .carousel-caption
-                    h4 California 2012
-                    p
-                      | Golden gate bridge over San Francisco bay
+                    img(src='images/senl05.jpg', alt='')
                 .item
-                  img(src='images/California201.jpg', alt='')
-                  .carousel-caption
-                    h4 California 2012
-                    p
-                      | Morning view over Yosemite park valley
+                    img(src='images/senl06.jpg', alt='')
+                .item
+                    img(src='images/senl07.jpg', alt='')
+                .item
+                    img(src='images/senl08.jpg', alt='')
+
               a.left.carousel-control(href='#myCarousel', data-slide='prev') ‹
               a.right.carousel-control(href='#myCarousel', data-slide='next') ›
 
-          //
-             Example row of columns
-        .container-marketing
-          .row
-            .span4
-              h2 Send a Message
-              p
-                a.btn(id='sender')='Send'
-              p
-                ul(id='receiver')
 
+        .row
             .span4
-              h2 Heading
+              img( class="img-square", src="images/schielandshuis.jpg")
+              h2 Algemene Info
+              //p
+                a.btn(id='sender')='Send'
+              //p
+                ul(id='receiver')
               p
-                | Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+                  | Op 14 september zullen Sven en Laura elkaar het jawoord geven in het Schielandshuis te Rotterdam.
+                  | De Rijksvoorlichtingsdienst  heeft bekend gemaakt dat het officiële afscheid van koningin Beatrix ook op 14 september plaatsvindt in Rotterdam.
+                  | Actuele informatie die van belang is de bruiloft zal op de website worden geplaatst.
               p
-                a.btn(href='#') View details »
+                  a.btn(href='/info',class="btn-purple xmlhttp-link") Lees meer »
             .span4
-              h2 Heading
+              img( class="img-square", src="images/rsvp.jpg")
+              h2 Ben jij erbij?
               p
-                | Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                | Graag willen wij, de ceremoniemeesters, maar natuurlijk ook Sven en Laura een bevestiging van je/jullie aanwezigheid.
               p
-                a.btn(href='#') View details »
-          hr
-    div.container
+                a.btn(href='/rsvp',class="btn-purple xmlhttp-link") Geef door »
+            .span4
+              img( class="img-square", src="images/honeymoon.jpg")
+              h2 Ons Cadeau
+              p
+                | Laura en Sven hebben één cadeauwens: een bijdrage aan de huwelijksreis. Dit willen we natuurlijk op originele wijze heel mooi verpakken.
+                | Kijk snel verder om te ontdekken hoe we dit tot een groot cadeau van alle gasten willen omtoveren, waarbij iedereen een zelf gekozen element  van de reis cadeau geeft.
+              p
+                a.btn(href='/reviews',class="btn-purple xmlhttp-link") Doe mee »
+        hr
+
+

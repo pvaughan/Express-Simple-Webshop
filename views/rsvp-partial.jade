@@ -1,0 +1,39 @@
+//
+   Created with IntelliJ IDEA.
+   User: pvaughan
+   Date: 4/21/13
+   Time: 1:45 PM
+   To change this template use File | Settings | File Templates.
+
+
+.container
+    .content
+
+        .page-header
+            h1= title
+            .row
+                .span6
+                    .form_box
+                        form(class="activate-code-form form-horizontal")
+                            fieldset
+
+                            legend Stap 1 - Activeer uw uitnodiging
+                            .control-group
+                                label(class="control-label") Uitnodiging code:
+                                .controls
+                                    input( id="lbl_code", name="code", type="text", placeholder="XYXY1234", class="input-large", required="Code verplicht")
+                                    p(class="help-block") Voer u unieke code in
+                            .control-group(id="acticateControl")
+                                label(class="control-label")
+                                .controls
+                                    button(id="btnSend", name="btnSend", class="btn btn-purple") Verstuur
+                .span6.pull-right
+                    img(data-src="holder.js/400x300", alt="360x270", src="images/svenfles.jpg")
+
+                .span6
+                    #guestFrom
+                .span6.pull-right
+                    #confirm
+
+
+    script(defer, src='/js/view-rsvp.js')

@@ -9,9 +9,23 @@
 exports.reviews = function(req, res){
     res.render('reviews.jade', {
         locals : {
-            title : 'Node App - Reviews'
+            title : 'Huwelijks Cadeau - Items'
             ,description: 'Your Page Description'
             ,author: 'Paul Vaughan'
+            ,page: 'gift'
+            ,analyticssiteid: 'UA-38061682-1'
+        }
+    });
+};
+
+
+exports.photoUpload = function(req, res){
+    res.render('photoUpload.jade', {
+        locals : {
+            title : 'Photo upload'
+            ,description: 'Your Page Description'
+            ,author: 'Paul Vaughan'
+            ,page: 'photo'
             ,analyticssiteid: 'UA-38061682-1'
         }
     });

@@ -1,17 +1,42 @@
 /* Author: YOUR NAME HERE
 */
+$.fn.serializeObject = function () {
+    var o = {},
+        a = this.serializeArray();
+    $.each(a, function () {
+        if (o[this.name] !== undefined) {
+            if (!o[this.name].push) {
+                o[this.name] = [o[this.name]];
+            }
+            o[this.name].push(this.value || '');
+        } else {
+            o[this.name] = this.value || '';
+        }
+    });
+    return o;
+};
 
-$(document).ready(function() {   
+$(document).ready(function() {
+    /*
+    var socket = io.connect();
+    $('#sender').bind('click', function() {
+        socket.emit('message', 'Message Sent on ' + new Date());
+}   );
 
-  var socket = io.connect();
+    socket.on('server_message', function(data){
+        $('#receiver').append('<li>' + data + '</li>');
+    });
+    */
 
-  $('#sender').bind('click', function() {
-   socket.emit('message', 'Message Sent on ' + new Date());     
-  });
+    $(".xmlhttp-link").click(function (e) {
+        e.preventDefault();
+        var href = $(this).attr('href');
 
-  socket.on('server_message', function(data){
-   $('#receiver').append('<li>' + data + '</li>');  
-  });
+        $(this).parent().siblings().removeClass('active');
+        $(this).parent().addClass('active');
+        _gaq.push(['_trackEvent', 'Navigate', href, 'load Page' ]);
+        $("#mainContent").load(href);
+    });
 
     $("#myCarousel").swiperight(function() {
         $("#myCarousel").carousel('prev');
@@ -20,5 +45,15 @@ $(document).ready(function() {
     $("#myCarousel").swipeleft(function() {
         $("#myCarousel").carousel('next');
     });
+
+    if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) {
+        var viewportmeta = document.querySelector('meta[name="viewport"]');
+        if (viewportmeta) {
+            viewportmeta.content = 'width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0';
+            document.body.addEventListener('gesturestart', function () {
+                viewportmeta.content = 'width=device-width, minimum-scale=0.25, maximum-scale=1.6';
+            }, false);
+        }
+    }
 
 });

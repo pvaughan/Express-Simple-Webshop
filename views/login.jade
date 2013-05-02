@@ -1,0 +1,27 @@
+//
+   Created with IntelliJ IDEA.
+   User: pvaughan
+   Date: 4/21/13
+   Time: 1:35 PM
+   To change this template use File | Settings | File Templates.
+block content
+    .container
+        .content
+
+            .page-header
+                h1= title
+                .row
+                    .span6
+                        form(action="/login", method='post', class="activate-code-form form-horizontal")
+                            fieldset
+
+                            legend Login me de code op uw uitnodiging
+                            .control-group
+                                label(class="control-label") Uitnodiging code:
+                                .controls
+                                    input( id="lbl_code", name="code", type="text", placeholder="XYXY1234", class="input-xlarge", required="Code verplicht")
+                                    p(class="help-block") Voer u unieke code in
+                            .control-group(id="acticateControl")
+                                label(class="control-label")
+                                .controls
+                                    button(id="btnSend", name="btnSend", class="btn btn-primary") Verstuur

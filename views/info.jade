@@ -1,0 +1,55 @@
+
+
+block content
+    .container
+        .content
+
+            .page-header
+                h1= title
+                    small - informatie
+            .row
+                .span4
+                    img(data-src="holder.js/360x270", alt="360x270", style="width: 360px; height: 270px;", src="images/schielandshuis.jpg")
+                .span8
+                    h2 Locatie
+                    p
+                        | Het Schielandshuis, gelegen in hartje centrum Rotterdam, is één van de oudste gebouwen in de binnenstad. Dit historische gebouw is daarmee één van de weinige bouwwerken die het bombardement op Rotterdam heeft doorstaan.
+                        | Sinds de bouw in 1665 heeft het een onderkomen geboden aan het Hoogheemraadschap Schieland, het Gemeente Archief, Museum Boijmans en recentelijk aan Museum Rotterdam. Wat op foto’s zelden wordt getoond, is de prachtige tuin.
+                    p
+            .row
+                .span4
+                    h2 Parkeren
+                    p
+                        | In het centrum van Rotterdam kun je uitsluitend betaald parkeren. Je kunt je auto parkeren in één van de betaalde parkeergarages in het centrum van Rotterdam of op een gratis P+R,
+                        | bijvoorbeeld Kralingse Zoom, waar vandaan je de metro naar het centrum pakt. De dichtstbijzijnde parkeergarage is gelegen naast het Schielandshuis: de Q-Park garage Beursplein aan de Bulgersteyn.
+                    p
+                .span4
+                    h2 Overnachten
+                    p
+                        | Rotterdam centrum biedt een ruime keuze aan hotels. Op loopafstand van het Schielandshuis gelegen zijn bijvoorbeeld NH Atlanta Rotterdam, H2OTEL, Hotel Bazar of het Bilderberg Parkhotel.
+                    p
+                .span4
+                    h2 Openbaar vervoer
+                    p
+                        | Het Schielandshuis is bereikbaar met zowel de tram als de metro.
+
+                    ul
+                        li Metro: Met metrolijn A/B/C (oost-west) of D/E (noord-zuid) reis je naar station Beurs.
+                        li Tram: Neem tram 8, 21, 23, 24 of 25 en stap uit bij halte Beurs.
+                        li Trein: Reis met de trein naar Rotterdam Centraal, stap daar over op metro D/E richting Slinge en stap uit bij station Beurs.
+
+            .row
+                hr
+                .span4
+                    h3 Adress
+                    p
+                        | Museumrestaurant de Pappegay
+                        br
+                        | Korte Hoogstraat 31
+                        br
+                        | 3011 GK Rotterdam
+                .span8
+                    #map-canvas(style="width: 100%; height: 500px") map target
+
+        script(defer, src='/js/info-view.js')
+
