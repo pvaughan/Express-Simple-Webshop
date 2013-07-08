@@ -2,71 +2,61 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/images/apple-touch-icon-ipad.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/images/apple-touch-icon-ipad3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/images/apple-touch-icon-iphone.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/images/apple-touch-icon-iphone4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/images/glyphicons-halflings-white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/images/glyphicons-halflings.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/images/honeymoon.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/images/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/twitter-bootstrap/bootstrap-alert.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/twitter-bootstrap/bootstrap-button.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/twitter-bootstrap/bootstrap-collapse.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/twitter-bootstrap/bootstrap-dropdown.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/twitter-bootstrap/bootstrap-modal.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/twitter-bootstrap/bootstrap-popover.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/bootstrap-responsive.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/bootstrap-responsive.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/twitter-bootstrap/bootstrap-scrollspy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/twitter-bootstrap/bootstrap-tab.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/twitter-bootstrap/bootstrap-tooltip.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/twitter-bootstrap/bootstrap-transition.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/twitter-bootstrap/bootstrap-typeahead.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/twitter-bootstrap/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/twitter-bootstrap/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/twitter-bootstrap/holder.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/jquery-1.9.0.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/jquery.form.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/modernizr-2.6.2.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/mysqlDB.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/plugins.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/pvaughan.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/templates.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/view-reviews.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/cart.hbs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/dropbox.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/media.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/info.jade" afterPath="$PROJECT_DIR$/views/info.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/info.js" afterPath="$PROJECT_DIR$/routes/info.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layout.jade" afterPath="$PROJECT_DIR$/views/layout.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/login.jade" afterPath="$PROJECT_DIR$/views/login.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/mysqlDB.js" afterPath="$PROJECT_DIR$/models/mysqlDB.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/photoUpload.jade" afterPath="$PROJECT_DIR$/views/photoUpload.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/review.hbs" afterPath="$PROJECT_DIR$/views/review.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/reviews.jade" afterPath="$PROJECT_DIR$/views/reviews.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/reviews.js" afterPath="$PROJECT_DIR$/routes/reviews.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/rsvp-partial.jade" afterPath="$PROJECT_DIR$/views/rsvp-partial.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/script.js" afterPath="$PROJECT_DIR$/static/js/script.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/style.css" afterPath="$PROJECT_DIR$/static/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/templates.js" afterPath="$PROJECT_DIR$/static/js/templates.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/test.html" afterPath="$PROJECT_DIR$/views/test.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/view-reviews.js" afterPath="$PROJECT_DIR$/static/js/view-reviews.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/view-rsvp.js" afterPath="$PROJECT_DIR$/static/js/view-rsvp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/view-uploadPhoto.js" afterPath="$PROJECT_DIR$/static/js/view-uploadPhoto.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/layout.jade" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1367433501753" ignored="false" />
+    <file path="/layout.jade" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1373307335248" ignored="false" />
     <file path="/index.jade" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1366475667626" ignored="false" />
-    <file path="/Dummy.txt" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1367525779798" ignored="false" />
+    <file path="/Dummy.txt" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1372506714270" ignored="false" />
     <file path="/server.js" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1359492413316" ignored="false" />
-    <file path="/reviews.js" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1367432950328" ignored="false" />
+    <file path="/reviews.js" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1369048389731" ignored="false" />
     <file path="$PROJECT_DIR$/../NodeApp/.idea/workspace.xml" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1359489551385" ignored="false" />
-    <file path="/reviews.jade" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1359497792039" ignored="false" />
-    <file path="/review.hbs" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1365523181555" ignored="false" />
-    <file path="/view-reviews.js" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1359497878251" ignored="false" />
-    <file path="/mysqlDB.js" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1366663617544" ignored="false" />
-    <file path="/style.css" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1366659641347" ignored="false" />
+    <file path="/reviews.jade" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1372513439155" ignored="false" />
+    <file path="/review.hbs" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1373315730722" ignored="false" />
+    <file path="/view-reviews.js" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1373317440502" ignored="false" />
+    <file path="/mysqlDB.js" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1373317428353" ignored="false" />
+    <file path="/style.css" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1372511474728" ignored="false" />
     <file path="/a.dummy" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1365854984297" ignored="false" />
-    <file path="/app.js" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1367525019671" ignored="false" />
+    <file path="/app.js" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1373316899024" ignored="false" />
     <file path="/info.js" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1365856426317" ignored="false" />
     <file path="/index.js" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1365857143261" ignored="false" />
     <file path="/info.jade" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1366228842165" ignored="false" />
     <file path="/test.html" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1365859663199" ignored="false" />
     <file path="/rsvp.jade" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1366544826981" ignored="false" />
     <file path="/rsvp.js" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1366544902813" ignored="false" />
-    <file path="/view-rsvp.js" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1366664383900" ignored="false" />
+    <file path="/view-rsvp.js" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1373309512337" ignored="false" />
     <file path="/guest.hbs" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1366664610183" ignored="false" />
-    <file path="/script.js" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1366477603342" ignored="false" />
+    <file path="/script.js" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1373307490716" ignored="false" />
     <file path="/login.jade" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1366545341505" ignored="false" />
-    <file path="/rsvp-partial.jade" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1366663745661" ignored="false" />
+    <file path="/rsvp-partial.jade" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1373309167659" ignored="false" />
     <file path="/confirm.hbs" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1366665121588" ignored="false" />
-    <file path="/photoUpload.jade" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1367432846099" ignored="false" />
+    <file path="/photoUpload.jade" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1369062277484" ignored="false" />
+    <file path="/dropbox.js" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1369051783445" ignored="false" />
+    <file path="/view-uploadPhoto.js" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1367864869958" ignored="false" />
+    <file path="/media.jade" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1369048549283" ignored="false" />
+    <file path="/cart.hbs" changelist="7d9da5ad-ecc6-47e1-b2ac-b4c832d1c178" time="1373190645980" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,37 +127,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="layout.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/layout.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="96" column="26" selection-start="4476" selection-end="4489" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="119" column="52" selection-start="3509" selection-end="3509" vertical-scroll-proportion="0.64705884">
+            <state line="95" column="36" selection-start="2780" selection-end="2802" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/dbox/README.md">
+      <file leaf-file-name="reviews.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/reviews.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="34" selection-start="1007" selection-end="1007" vertical-scroll-proportion="0.0">
+            <state line="1" column="0" selection-start="1" selection-end="15" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view-rsvp.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/js/view-rsvp.js">
+      <file leaf-file-name="reviews.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/reviews.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="0" selection-start="2128" selection-end="2128" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -182,53 +163,56 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="photoUpload.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/photoUpload.jade">
+      <file leaf-file-name="rsvp-partial.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/rsvp-partial.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="49" selection-start="195" selection-end="195" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1367433516000" expanded="true" signature="172:554" placeholder="..." />
-                <marker date="1367433516000" expanded="true" signature="329:484" placeholder="..." />
-                <marker date="1367433516000" expanded="true" signature="560:647" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="info.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/info.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="15" selection-start="460" selection-end="460" vertical-scroll-proportion="0.0">
+            <state line="37" column="179" selection-start="1378" selection-end="1378" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reviews.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/reviews.js">
+      <file leaf-file-name="view-rsvp.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/js/view-rsvp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="19" selection-start="483" selection-end="494" vertical-scroll-proportion="0.0">
+            <state line="81" column="48" selection-start="2414" selection-end="2414" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reviews.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/reviews.jade">
+      <file leaf-file-name="view-reviews.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/js/view-reviews.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="416" selection-end="416" vertical-scroll-proportion="0.0">
+            <state line="64" column="6" selection-start="1763" selection-end="1763" vertical-scroll-proportion="0.45394737">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view-uploadPhoto.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/js/view-uploadPhoto.js">
+      <file leaf-file-name="review.hbs" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/review.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="57" selection-start="1043" selection-end="1043" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#0#154#0" expanded="false" />
-              </folding>
+            <state line="13" column="0" selection-start="399" selection-end="399" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mysqlDB.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/mysqlDB.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="151" column="0" selection-start="4790" selection-end="4790" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="198" column="185" selection-start="5213" selection-end="5213" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -259,22 +243,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/routes/rsvp.js" />
-        <option value="$PROJECT_DIR$/views/login.jade" />
-        <option value="$PROJECT_DIR$/views/reviews.jade" />
-        <option value="$PROJECT_DIR$/views/index.jade" />
-        <option value="$PROJECT_DIR$/static/css/style.css" />
-        <option value="$PROJECT_DIR$/models/mysqlDB.js" />
-        <option value="$PROJECT_DIR$/views/rsvp-partial.jade" />
-        <option value="$PROJECT_DIR$/views/guest.hbs" />
-        <option value="$PROJECT_DIR$/static/js/view-rsvp.js" />
-        <option value="$PROJECT_DIR$/views/confirm.hbs" />
-        <option value="$PROJECT_DIR$/views/photoUpload" />
-        <option value="$PROJECT_DIR$/routes/reviews.js" />
-        <option value="$PROJECT_DIR$/views/layout.jade" />
         <option value="$PROJECT_DIR$/views/photoUpload.jade" />
-        <option value="$PROJECT_DIR$/static/js/view-uploadPhoto.js" />
+        <option value="$PROJECT_DIR$/views/test.html" />
+        <option value="$PROJECT_DIR$/views/reviews.jade" />
+        <option value="$PROJECT_DIR$/views/cart.hbs" />
+        <option value="$PROJECT_DIR$/static/js/script.js" />
+        <option value="$PROJECT_DIR$/views/layout.jade" />
+        <option value="$PROJECT_DIR$/views/info.jade" />
+        <option value="$PROJECT_DIR$/views/login.jade" />
+        <option value="$PROJECT_DIR$/routes/info.js" />
+        <option value="$PROJECT_DIR$/views/rsvp-partial.jade" />
+        <option value="$PROJECT_DIR$/static/js/view-rsvp.js" />
+        <option value="$PROJECT_DIR$/static/css/style.css" />
+        <option value="$PROJECT_DIR$/views/review.hbs" />
         <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/models/mysqlDB.js" />
+        <option value="$PROJECT_DIR$/static/js/view-reviews.js" />
       </list>
     </option>
   </component>
@@ -282,9 +266,10 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="74" />
     <option name="y" value="22" />
-    <option name="width" value="2560" />
-    <option name="height" value="1327" />
+    <option name="width" value="2233" />
+    <option name="height" value="1291" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -423,38 +408,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="routes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Not test app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NodeBoilerPlateApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Not test app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NodeBoilerPlateApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dbox" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -674,7 +627,15 @@
       <created>1367525784409</created>
       <updated>1367525784409</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Lost of stuff :)">
+      <created>1367525860004</created>
+      <updated>1367525860004</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Lost of stuff :)">
+      <created>1367525889838</created>
+      <updated>1367525889838</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers>
       <GitHub shared="false">
         <commitMessageFormat>{id} {summary}</commitMessageFormat>
@@ -711,31 +672,31 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="2560" height="1327" extended-state="0" />
+    <frame x="74" y="22" width="2233" height="1291" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32891467" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32821825" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32951483" sideWeight="0.67058825" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891467" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.67058825" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19407009" sideWeight="0.67058825" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42597187" sideWeight="0.97056484" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31116796" sideWeight="0.9990983" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32951483" sideWeight="0.67058825" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919767" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32754344" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32907075" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32736573" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32951483" sideWeight="0.67058825" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18178202" sideWeight="0.67108536" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20896205" sideWeight="0.6717818" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3267163" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891467" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -796,10 +757,17 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/static/js/view-reviews.js</url>
+          <line>39</line>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="42" />
+      <option name="time" value="93" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -807,51 +775,46 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/models/mysqlDB.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="7" selection-start="2331" selection-end="2331" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/guest.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="1126" selection-end="1126" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/confirm.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="115" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="35" selection-start="686" selection-end="692" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/review.hbs">
+    <entry file="file://$PROJECT_DIR$/static/js/plugins.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="0" selection-start="738" selection-end="739" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/layout.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="44" selection-start="2165" selection-end="2165" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/login.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="198" selection-start="165" selection-end="165" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/info.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="24" selection-start="2654" selection-end="2664" vertical-scroll-proportion="0.0">
+        <state line="0" column="14" selection-start="14" selection-end="14" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/info.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="15" selection-start="460" selection-end="460" vertical-scroll-proportion="0.0">
+        <state line="17" column="218" selection-start="465" selection-end="465" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -863,64 +826,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/photoUpload.jade">
+    <entry file="file://$PROJECT_DIR$/views/rsvp-partial.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="49" selection-start="195" selection-end="195" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1367433516000" expanded="true" signature="172:554" placeholder="..." />
-            <marker date="1367433516000" expanded="true" signature="329:484" placeholder="..." />
-            <marker date="1367433516000" expanded="true" signature="560:647" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/layout.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="26" selection-start="4476" selection-end="4489" vertical-scroll-proportion="0.0">
+        <state line="37" column="179" selection-start="1378" selection-end="1378" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/view-rsvp.js">
+    <entry file="file://$PROJECT_DIR$/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="0" selection-start="2128" selection-end="2128" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/view-uploadPhoto.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="57" selection-start="1043" selection-end="1043" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#154#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/reviews.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="416" selection-end="416" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/dbox/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="34" selection-start="1007" selection-end="1007" vertical-scroll-proportion="0.0">
+        <state line="198" column="185" selection-start="5213" selection-end="5213" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/reviews.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="19" selection-start="483" selection-end="494" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/reviews.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="1" selection-end="15" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/review.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="399" selection-end="399" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/view-rsvp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="48" selection-start="2414" selection-end="2414" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="52" selection-start="3509" selection-end="3509" vertical-scroll-proportion="0.64705884">
+        <state line="95" column="36" selection-start="2780" selection-end="2802" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/mysqlDB.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="151" column="0" selection-start="4790" selection-end="4790" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/view-reviews.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="6" selection-start="1763" selection-end="1763" vertical-scroll-proportion="0.45394737">
           <folding />
         </state>
       </provider>

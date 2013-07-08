@@ -8,7 +8,7 @@
 exports.info = function(req, res){
     res.render('info.jade', {
         locals : {
-            title : 'Het Schielandhuis'
+            title : 'Het Schielandshuis '
             ,description: 'Sven en laura gaan trouwen'
             ,author: 'Paul Vaughan'
             ,page: 'info'

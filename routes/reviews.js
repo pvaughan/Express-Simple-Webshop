@@ -6,7 +6,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-exports.reviews = function(req, res){
+exports.reviews = function (req, res) {
     res.render('reviews.jade', {
         locals : {
             title : 'Huwelijks Cadeau - Items'
@@ -19,7 +19,7 @@ exports.reviews = function(req, res){
 };
 
 
-exports.photoUpload = function(req, res){
+exports.photoUpload = function (req, res) {
     res.render('photoUpload.jade', {
         locals : {
             title : 'Photo upload'
@@ -28,5 +28,22 @@ exports.photoUpload = function(req, res){
             ,page: 'photo'
             ,analyticssiteid: 'UA-38061682-1'
         }
+    });
+};
+
+
+exports.showAllMedia = function (req, res, db) {
+    db.getAllMedia(function (data) {
+        "use strict";
+        res.render('media.jade', {
+            locals: {
+                title: 'Photo upload',
+                description: 'Your Page Description',
+                author: 'Paul Vaughan',
+                page: 'photo',
+                media: data,
+                analyticssiteid: 'UA-38061682-1'
+            }
+        });
     });
 };

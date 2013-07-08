@@ -14,11 +14,54 @@ block content
                 h1= title
 
             .row
-                .span8
+                .span6
+                    form.form-horizontal.form_box
+                        fieldset
+
+                            legend Create a new Item
+
+                                .control-group
+                                    label.control-label(for='text_itemName') Item Name
+                                    .controls
+                                        input#text_itemName.input-large(name='text_itemName', type='text', placeholder='',title='vffs', required='verplicht!')
+
+                                .control-group
+                                    label.control-label(for='text_description') Item description
+                                    .controls
+                                        textarea#text_description(name='text_description')
+
+                                .control-group
+                                    label.control-label(for='filebutton') Item Image
+                                    .controls
+                                        input#filebutton.input-file(name='filebutton', type='file')
+
+                                .control-group
+                                    label.control-label(for='text_unitPrice') Unit price
+                                    .controls
+                                        input#text_unitPrice.input-mini(name='text_unitPrice', type='text', placeholder='0.00', required='')
+
+                                .control-group
+                                    label.control-label(for='text_NrInStock') Nr in stock
+                                    .controls
+                                        input#text_NrInStock.input-mini(name='text_NrInStock', type='text', placeholder='0', required='')
+
+                                .control-group
+                                    label.control-label(for='submit')
+                                    .controls
+                                        button#submit.btn.btn-purple(name='submit') Save Item
+
+
+                .row
+                .span6
                     form#uploadForm(enctype='multipart/form-data', action='/api/photos', method='post')
                         input#userPhotoInput(type='file', name='userPhoto')
+                        input(id='btnSend', type='submit', value='send photo')
                     span#status
                     img#uploadedImage
+                    .progress.progress-striped.active
+                        .bar(style='width: 40%;')
+
+
 block script
     script(src='/js/jquery.form.js')
     script(src='/js/view-uploadPhoto.js')

@@ -4,15 +4,13 @@
   <li class="span4">
     <div class="thumbnail">
     <a href="#" class="thumbnail">
-
         <img data-src="holder.js/300x200" style="width: 300px; height: 200px;" src="{{this.ImageData}}" alt="">
 
       </a>
       <h3>{{this.Name}}</h3>
       <p>{{this.Description}}</p>
-      <a href="#" class="btn btn-primary">Add item</a>
+      <a href="#" data-id="{{this.id}}"  class="btn btn-primary">Add item</a>
     </div>
-
  </li>
  {{/each}}
 </ul>

@@ -3,9 +3,8 @@ var connect = require('connect')
     , express = require('express')
     , format = require('util').format
     , sqlServer = require("./models/mysqlDB.js")
-    , dbox  = require("dbox")
     , routes = require('./routes')
-    ,fs = require('fs')
+    , dropbox = require('./routes/dropbox')
     , reviews = require('./routes/reviews')
     , info = require('./routes/info')
     , rsvp = require('./routes/rsvp')
@@ -67,34 +66,6 @@ io.sockets.on('connection', function(socket){
 });
 
 
-var app   = dbox.app({ "app_key": "no00xsfglgclzib", "app_secret": "pbxm6gm0409rfae" })
-/*
-app.requesttoken(function(status, request_token){
-    console.log("request");
-    console.log(request_token);
-
-});*/
-
-var request_token =  { oauth_token_secret: '520Jown2yivCnIAv',
-                       oauth_token: '2NJy7YiXroVjemwT',
-                       authorize_url: 'https://www.dropbox.com/1/oauth/authorize?oauth_token=2NJy7YiXroVjemwT' };
-
-/*
-app.accesstoken(request_token, function(status, access_token){
-    console.log(access_token)
-})
-*/
-
-
-var access_token = { oauth_token_secret: '2aqivn6sx5c21p5',
-                     oauth_token: 'nanpa21ohrnpwmx',
-                     uid: '48451001' };
-
-
-var client = app.client(access_token);
-client.account(function(status, reply){
-    console.log(reply)
-});
 
 
 
@@ -108,8 +79,43 @@ server.get('/', routes.index);
 
 server.get('/info', info.info);
 server.get('/rsvp', rsvp.rsvp);
-server.get('/photo',reviews.photoUpload);
 
+server.get('/photo',reviews.photoUpload);
+server.post('/api/photos',function(req, res){
+    dropbox.photoUpload(req, res, sqlServer);
+});
+
+
+server.get('/media',function(req, res){
+    reviews.showAllMedia(req, res, sqlServer);
+});
+
+
+
+server.delete('/cartItems/:id?', function(req, res ){
+    sqlServer.removeGiftItemForGuest(req, res, function(result ) {
+        res.send(result);
+    });
+});
+
+server.put('/cartItems/:id?', function(req, res){
+    sqlServer.updateGiftItemForGuest(req, res, function(result ) {
+        res.send(result);
+    });
+});
+
+server.post('/cartItems', function(req, res){
+    sqlServer.addGiftItemsForGuest(req, res, function(result ) {
+        res.send(result);
+    });
+});
+
+
+server.get('/cartItems', function(req, res){
+    sqlServer.getGiftItemsForGuest(req, res, function(giftItems) {
+        res.send(giftItems);
+    });
+});
 
 server.get('/reviews', restrict, reviews.reviews);
 
@@ -120,9 +126,7 @@ server.get('/items', function(req, res){
 });
 
 server.get('/env', function(req, res){
-
         res.send(process.env.VCAP_SERVICES);
-
 });
 
 
@@ -136,7 +140,19 @@ server.post('/items', function(req, res){
 
 server.post('/rsvp/code', function (req, res){
     sqlServer.getGuestWithCode(req, res, function (guests) {
-        res.send(guests);
+         if (guests) {
+            var userName =  "";
+            for (var i = 0; i < guests.length; i++) {
+                userName += guests[i].Name + " ";
+            }
+
+            req.session.regenerate(function(){
+                req.session.guests = guests;
+                req.session.success = 'Authenticated as ' + userName;
+                res.send(guests);
+
+            });
+         }
     });
 });
 
@@ -144,47 +160,6 @@ server.post('/rsvp/confirmRVP', function (req, res){
     sqlServer.updateGuestWithRSVP(req, res);
 });
 
-
-server.post('/api/photos', function(req, res) {
-    console.log(JSON.stringify(req.files));
-    var photo =   req.files.userPhoto;
-    var filePath =    photo.path +'/'+ photo.name ;
-    console.log( filePath);
-
-    fs.readFile( photo.path, function(err, data) {
-        if (err) throw err; // Fail if the file can't be read.
-        client.put(req.files.userPhoto.name, data, function(status, reply){
-            console.log(reply)
-        })
-    });
-
-
-});
-
-//image
-server.get('/image', function(req, res){
-    res.send('<form method="post" enctype="multipart/form-data">'
-        + '<p>Title: <input type="text" name="title" /></p>'
-        + '<p>Image: <input type="file" name="image" /></p>'
-        + '<p><input type="submit" value="Upload" /></p>'
-        + '</form>');
-});
-
-server.post('/image', function(req, res, next){
-    // the uploaded file can be found as `req.files.image` and the
-    // title field as `req.body.title`
-
-    client.put(req.files.image.name, req.files.image, function(status, reply){
-        console.log(reply)
-    })
-
-
-    res.send(format('\nuploaded %s (%d Kb) to %s as %s'
-        , req.files.image.name
-        , req.files.image.size / 1024 | 0
-        , req.files.image.path
-        , req.body.title));
-});
 
 
 
@@ -194,7 +169,15 @@ function restrict(req, res, next) {
         next();
     } else {
         req.session.error = 'Access denied!';
-        res.redirect('/login');
+        res.render('login.jade', {
+            locals : {
+                title : 'Login'
+                ,description: 'Sven en laura gaan trouwen whoohooo!!'
+                ,page: 'login'
+                ,author: 'Paul Vaughan'
+                ,analyticssiteid: 'UA-38061682-1'
+            }
+        });
     }
 }
 

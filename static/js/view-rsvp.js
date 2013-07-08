@@ -56,7 +56,8 @@ $(function () {
 
         render: function (items) {
             var html = Handlebars.templates.guest(items);
-            this.$el.html(html).fadeIn('slow');
+            this.$el.hide().html(html).slideDown();
+            //$(rendered.el).appendTo(this.$el).hide().fadeIn().slideDown();
         },
         confirmGuests: function (ev) {
             var that = this;
@@ -78,7 +79,7 @@ $(function () {
 
         render: function (items) {
             var html = Handlebars.templates.confirm();
-            this.$el.html(html).fadeIn('slow');
+            this.$el.hide().html(html).slideDown();
         }
     });
 

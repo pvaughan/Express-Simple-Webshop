@@ -1,0 +1,28 @@
+//
+   Created with IntelliJ IDEA.
+   User: pvaughan
+   Date: 5/20/13
+   Time: 1:09 PM
+   To change this template use File | Settings | File Templates.
+
+    extends layout
+
+block content
+    .container
+        .content
+            .page-header
+                h1= title
+            .row-fluid
+                ul.thumbnails
+                    for file in media
+                        li.span3
+                            a.thumbnail(href='#')
+                                img(data-src='holder.js/260x180', alt='260x180', style='width: 260px; height: 180px;', src=file.ThumbNailPath)
+
+
+
+
+
+
+
+

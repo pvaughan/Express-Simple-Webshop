@@ -28,15 +28,6 @@ $(document).ready(function() {
     });
     */
 
-    $(".xmlhttp-link").click(function (e) {
-        e.preventDefault();
-        var href = $(this).attr('href');
-
-        $(this).parent().siblings().removeClass('active');
-        $(this).parent().addClass('active');
-        _gaq.push(['_trackEvent', 'Navigate', href, 'load Page' ]);
-        $("#mainContent").load(href);
-    });
 
     $("#myCarousel").swiperight(function() {
         $("#myCarousel").carousel('prev');
