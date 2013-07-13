@@ -8,55 +8,47 @@
 extends layout
 
 block content
+
+
     .container
         .content
             .page-header
-                h1= title
+                .hero-unit
+                    h1= title
+                    .row
+                        .span5
+                            p   uileg
 
             .row
-                .span6
-                    form.form-horizontal.form_box
+                .span9
+                    form.form-horizontal.form_box#uploadForm(enctype='multipart/form-data', action='/api/photos', method='post')
                         fieldset
 
-                            legend Create a new Item
+                            legend Maak je cadeau persoonlijk
+
 
                                 .control-group
-                                    label.control-label(for='text_itemName') Item Name
+                                    label.control-label(for='text_description') Reistip of wens voor Sven en Laura
                                     .controls
-                                        input#text_itemName.input-large(name='text_itemName', type='text', placeholder='',title='vffs', required='verplicht!')
+                                        textarea#text_description(name='text_description',style="height:300px; width:90%;")
 
                                 .control-group
-                                    label.control-label(for='text_description') Item description
+                                    label.control-label(for='text_unitPrice') Kies een foto
                                     .controls
-                                        textarea#text_description(name='text_description')
+                                        input.btn.btn-purple#userPhotoInput(type='file', name='userPhoto')
+
 
                                 .control-group
-                                    label.control-label(for='filebutton') Item Image
+                                    label.control-label(for='text_NrInStock') Stuur foto
                                     .controls
-                                        input#filebutton.input-file(name='filebutton', type='file')
+                                        input.btn.btn-purple(id='btnSend', type='submit', value='Verstuur')
 
-                                .control-group
-                                    label.control-label(for='text_unitPrice') Unit price
-                                    .controls
-                                        input#text_unitPrice.input-mini(name='text_unitPrice', type='text', placeholder='0.00', required='')
 
-                                .control-group
-                                    label.control-label(for='text_NrInStock') Nr in stock
-                                    .controls
-                                        input#text_NrInStock.input-mini(name='text_NrInStock', type='text', placeholder='0', required='')
-
-                                .control-group
-                                    label.control-label(for='submit')
-                                    .controls
-                                        button#submit.btn.btn-purple(name='submit') Save Item
 
 
                 .row
                 .span6
-                    form#uploadForm(enctype='multipart/form-data', action='/api/photos', method='post')
-                        input#userPhotoInput(type='file', name='userPhoto')
-                        input(id='btnSend', type='submit', value='send photo')
-                    span#status
+
                     img#uploadedImage
                     .progress.progress-striped.active
                         .bar(style='width: 40%;')
