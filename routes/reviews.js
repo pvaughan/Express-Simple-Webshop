@@ -9,7 +9,7 @@
 exports.reviews = function (req, res) {
     res.render('reviews.jade', {
         locals : {
-            title : 'Huwelijks Cadeau - Items'
+            title :'Huwelijkscadeau'
             ,description: 'Your Page Description'
             ,author: 'Paul Vaughan'
             ,page: 'gift'

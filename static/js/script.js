@@ -16,7 +16,7 @@ $.fn.serializeObject = function () {
     return o;
 };
 
-$(document).ready(function() {
+$(document).ready(function () {
     /*
     var socket = io.connect();
     $('#sender').bind('click', function() {
@@ -27,7 +27,7 @@ $(document).ready(function() {
         $('#receiver').append('<li>' + data + '</li>');
     });
     */
-
+    $.ajaxSetup({ cache: false });
 
     $("#myCarousel").swiperight(function() {
         $("#myCarousel").carousel('prev');
@@ -46,5 +46,14 @@ $(document).ready(function() {
             }, false);
         }
     }
+
+    bootstrap_alert = function() {}
+    bootstrap_alert.warning = function(message) {
+        $('#alert_placeholder').html('<div class="alert"><a class="close" data-dismiss="alert">×</a><span><strong>Ahhh snap! </strong> '+message+'</span></div>')
+    }
+
+
+
+
 
 });

@@ -3,14 +3,21 @@
  {{#each []}}
   <li class="span4">
     <div class="thumbnail">
-    <a href="#" class="thumbnail">
-        <img data-src="holder.js/300x200" style="width: 300px; height: 200px;" src="{{this.ImageData}}" alt="">
-
-      </a>
+    <a class="thumbnail">
+        <img data-src="holder.js/300x200" style="width: 300px; height: 200px;"  src="images/shop/{{this.ImageData}}" alt="">
+    </a>
       <h3>{{this.Name}}</h3>
       <p>{{this.Description}}</p>
-      <a href="#" data-id="{{this.id}}"  class="btn btn-primary">Add item</a>
-    </div>
+        {{#ifCostIsZero}}
+           <p>€ {{this.Price}} - Nog {{this.remainingStock}} beschikbaar</p>
+
+           <a href="#" data-id="{{this.id}}"  class="btn btn-purple">Toevoegen</a>
+       {{else}}
+           <p>Helaas niet meer beschikbaar :(</p>
+
+      {{/ifCostIsZero}}
+
+     </div>
  </li>
  {{/each}}
 </ul>

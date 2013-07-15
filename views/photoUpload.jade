@@ -6,52 +6,19 @@
    To change this template use File | Settings | File Templates.
 
 extends layout
-
 block content
-
-
-    .container
+     .container
         .content
-            .page-header
-                .hero-unit
-                    h1= title
-                    .row
-                        .span5
-                            p   uileg
 
-            .row
-                .span9
-                    form.form-horizontal.form_box#uploadForm(enctype='multipart/form-data', action='/api/photos', method='post')
-                        fieldset
-
-                            legend Maak je cadeau persoonlijk
-
-
-                                .control-group
-                                    label.control-label(for='text_description') Reistip of wens voor Sven en Laura
-                                    .controls
-                                        textarea#text_description(name='text_description',style="height:300px; width:90%;")
-
-                                .control-group
-                                    label.control-label(for='text_unitPrice') Kies een foto
-                                    .controls
-                                        input.btn.btn-purple#userPhotoInput(type='file', name='userPhoto')
-
-
-                                .control-group
-                                    label.control-label(for='text_NrInStock') Stuur foto
-                                    .controls
-                                        input.btn.btn-purple(id='btnSend', type='submit', value='Verstuur')
-
-
-
-
+            .hero-unit
+                h1 All Done!!
                 .row
-                .span6
+                    .span6
+                        p   Bedank voor je bijdrage :) . Graag het bedrag overmaken naar Paul Vaughan ABN-AMRO 60.67.62.094
 
-                    img#uploadedImage
-                    .progress.progress-striped.active
-                        .bar(style='width: 40%;')
+
+
+
 
 
 block script

@@ -66,7 +66,11 @@ io.sockets.on('connection', function(socket){
 });
 
 
-
+server.dynamicHelpers({
+    session: function (req, res) {
+        return req.session;
+    }
+});
 
 
 ///////////////////////////////////////////
@@ -74,8 +78,8 @@ io.sockets.on('connection', function(socket){
 ///////////////////////////////////////////
 
 /////// ADD ALL YOUR ROUTES HERE  /////////
-
-server.get('/', routes.index);
+server.get('/', routes.redirect);
+server.get('/home', routes.index);
 
 server.get('/info', info.info);
 server.get('/rsvp', rsvp.rsvp);
@@ -117,6 +121,10 @@ server.get('/cartItems', function(req, res){
     });
 });
 
+server.post('/finaliseGift',reviews.photoUpload);
+
+
+
 server.get('/reviews', restrict, reviews.reviews);
 
 server.get('/items', function(req, res){
@@ -148,6 +156,9 @@ server.post('/rsvp/code', function (req, res){
 
             req.session.regenerate(function(){
                 req.session.guests = guests;
+                req.session.guests = guests;
+                req.session.logedIn = true;
+                req.session.navsuccess = 'Hoi ' + userName;
                 req.session.success = 'Authenticated as ' + userName;
                 res.send(guests);
 
@@ -196,12 +207,14 @@ server.get('/login', function(req, res){
 
 server.post('/login', function(req, res){
     sqlServer.getGuestWithCode(req, res, function (guests) {
-        if (guests) {
+        if (guests && guests.length > 0) {
             // Regenerate session when signing in
             // to prevent fixation
             var userName =  "";
             for (var i = 0; i < guests.length; i++) {
-                userName += guests[i].Name + " ";
+                if( i > 0 )
+                    userName += " en "
+                userName += guests[i].Name;
             }
 
             req.session.regenerate(function(){
@@ -209,7 +222,9 @@ server.post('/login', function(req, res){
                 // in the session store to be retrieved,
                 // or in this case the entire user object
                 req.session.guests = guests;
-                req.session.success = 'Authenticated as ' + userName
+                req.session.logedIn = true;
+                req.session.navsuccess = 'Hoi ' + userName;
+                req.session.success = 'Authenticated as ' + userName;
                     + ' click to <a href="/logout">logout</a>. '
                     + ' You may now access <a href="/restricted">/restricted</a>.';
                 res.redirect('back');
@@ -227,7 +242,7 @@ server.get('/logout', function(req, res){
     // destroy the user's session to log them out
     // will be re-created next request
     req.session.destroy(function(){
-        res.redirect('/');
+        res.redirect('/home');
     });
 });
 

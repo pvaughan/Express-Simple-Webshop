@@ -10,9 +10,11 @@ var mysql = require('mysql');
 var MYSQL_USERNAME = 'root';
 var MYSQL_PASSWORD = '';
 
+
+var connectionState = false;
 var connection;
 
-
+/*
 if (process.env.VCAP_SERVICES) {
     var env = JSON.parse(process.env.VCAP_SERVICES);
     var cre = env['mysql-5.1'][0]['credentials'];
@@ -33,16 +35,75 @@ if (process.env.VCAP_SERVICES) {
         database: 'svenenlauraDB'
     });
 }
+*/
 
 
+function attemptConnection() {
+    if (!connectionState) {
+        connection = null;
+
+        if (process.env.VCAP_SERVICES) {
+            var env = JSON.parse(process.env.VCAP_SERVICES);
+            var cre = env['mysql-5.1'][0]['credentials'];
+
+            connection = mysql.createConnection({
+                host: cre.host,
+                port: cre.port,
+                user: cre.username,
+                password: cre.password,
+                database: cre.name
+            });
+            console.log('connected to cloud db');
+        } else {
+            connection = mysql.createConnection({
+                host: 'localhost',
+                user: MYSQL_USERNAME,
+                password: MYSQL_PASSWORD,
+                database: 'svenenlauraDB'
+            });
+        }
+        connectionState = true;
+
+        connection.on('close', function (err) {
+            console.log('mysqldb conn closed after recconnect' + err);
+            connectionState = false;
+        });
+
+        connection.on('error', function (err) {
+            console.log('mysqldb error in reconnect: ' + err);
+
+            if (!err.fatal) {
+                //throw err;
+            }
+            if (err.code !== 'PROTOCOL_CONNECTION_LOST') {
+                //throw err;
+            } else {
+                connectionState = false;
+            }
+
+        });
+    }
+}
+
+attemptConnection();
+
+var dbConnChecker = setInterval(function(){
+    if(!connectionState){
+        console.log('not connected, attempting reconnect');
+        attemptConnection();
+    }
+}, 30000);
 
 
-exports.getItems = function(callback) {
-    connection.query("SELECT ID as id, Name, Description, ImageData, Price, NrInStock FROM Items", function(err, results, fields) {
-        // callback function returns employees array
-        callback(results);
-
-    });
+exports.getItems = function (callback) {
+    connection.query("select Items.ID as id, Items.Name, Items.Description,Items.ImageData, Items.Price,  Items.NrInStock, " +
+        "totalOrderd.totalOrdered, " +
+        "CASE WHEN totalOrderd.totalOrdered > 0 THEN (Items.NrInStock - totalOrderd.totalOrdered) ELSE Items.NrInStock END as remainingStock " +
+        "from Items  left outer join (select Item_ID, sum(Quantity) as totalOrdered FROM Gift_Items group by Item_ID) totalOrderd " +
+        "ON Items.ID = totalOrderd.Item_ID order by Items.Name", function (err, results, fields) {
+            // callback function returns employees array
+            callback(results);
+        });
 }
 
 
@@ -80,7 +141,8 @@ exports.getAllMedia = function(callback) {
 exports.getGuestWithCode = function(req, res, callback) {
     var item = req.body;
     console.log('Getting guests for code: ' + JSON.stringify(item));
-    connection.query("SELECT g.ID, g.Name, g.Surname, i.ID, i.Code FROM Guest g INNER JOIN invitation i ON g.InvitationID = i.ID WHERE i.Code = ?", item.code, function(err, results, fields) {
+    connection.query("SELECT g.ID, g.Name, g.Surname, i.ID as InviteID, i.Code FROM Guest g INNER JOIN invitation i ON g.InvitationID = i.ID WHERE i.Code = ?", item.code, function(err, results, fields) {
+        console.log('SQL guest error:' + JSON.stringify(err));
         // callback function returns employees array
         callback(results);
 
@@ -95,7 +157,7 @@ exports.updateGuestWithRSVP = function(req, res) {
        var userId =  parseInt(rspv.user_id[i]);
        var diet =  rspv.text_diet[i];
        var attend =  rspv.dropd_attend[i] == "1" ?true:false ;
-       console.log('Updating user: ' + userId + ' attend: ' + attend);
+       console.log('Updating user: ' + userId + ' attend: ' + attend + ' diet: ' + diet );
        connection.query("UPDATE Guest SET Present=?, Comment=? WHERE ID=?", [attend,diet,userId], function(err, result) {
             console.log(err);
        });
@@ -108,17 +170,27 @@ exports.updateGuestWithRSVP = function(req, res) {
 
 exports.addGiftItemsForGuest = function(req, res, callback) {
     var guests = req.session.guests;
+
+
+
     if(guests && guests.length > 0)
     {
         var item = req.body;
+        console.log('GiftItem for user:' + JSON.stringify(item));
 
-        var invitationId = guests[0].ID;
+        var invitationId = guests[0].InviteID;
         var itemId = item.item_id;
         var quantity = item.Quantity;
-
-        connection.query("INSERT INTO Gift_Items (`Gift_ID`, `Item_ID`, `Quantity`) VALUES ((SELECT ID FROM GIFT where Invitation_ID = ?), ?, ?)",[invitationId,itemId,quantity], function(err, result) {
-            // callback function returns employees array
-            callback(result);
+        checkInventoryForItem(itemId, function (result) {
+            if (result[0].remainingStock > 0) {
+                connection.query("INSERT INTO Gift_Items (`Gift_ID`, `Item_ID`, `Quantity`) VALUES ((SELECT ID FROM Gift where Invitation_ID = ?), ?, ?)", [invitationId, itemId, quantity], function (err, result) {
+                    // callback function returns employees array
+                    console.log('GiftItem error:' + JSON.stringify(err));
+                    callback(result);
+                });
+            } else {
+                callback(null);
+            }
         });
     }
 }
@@ -126,7 +198,7 @@ exports.addGiftItemsForGuest = function(req, res, callback) {
 
 exports.getGiftItemsForGuest = function(req, res, callback) {
     var guests = req.session.guests;
-    var invitationId = guests[0].ID;
+    var invitationId = guests[0].InviteID;
     connection.query("SELECT gi.Item_ID as id, g.Invitation_ID, i.Name, ROUND(i.Price * gi.quantity,2) as 'Price', gi.quantity , gi.Gift_ID " +
                      "FROM Gift_Items gi inner join Gift g on gi.Gift_ID= g.ID inner join Items i on gi.Item_ID= i.ID Where g.Invitation_ID = ?", invitationId, function(err, results, fields) {
         // callback function returns employees array
@@ -134,9 +206,13 @@ exports.getGiftItemsForGuest = function(req, res, callback) {
     });
 }
 
-
-
-
+function checkInventoryForItem(itemId, callback) {
+    connection.query("select Items.ID as id, CASE WHEN orderdItems.totalOrdered > 0 THEN (Items.NrInStock - orderdItems.totalOrdered) ELSE Items.NrInStock END as remainingStock " +
+        "from Items  left outer join " +
+        "(select Item_ID, sum(Quantity) as totalOrdered FROM Gift_Items group by Item_ID) orderdItems ON Items.ID = orderdItems.Item_ID where id =?", itemId,function(err, result) {
+        callback(result);
+    });
+}
 
 exports.updateGiftItemForGuest = function(req, res, callback) {
     var guests = req.session.guests;
@@ -144,12 +220,19 @@ exports.updateGiftItemForGuest = function(req, res, callback) {
     {
         var item = req.body;
         var quantity = item.quantity;
-        var invitationId = guests[0].ID;
+        var invitationId = guests[0].InviteID;
         var itemId = req.params.id;
-        connection.query("UPDATE Gift_Items SET QUANTITY = ? where Gift_ID = (SELECT ID FROM GIFT where Invitation_ID = ?) AND Item_ID = ?", [quantity,invitationId,itemId], function(err, result) {
-            // callback function returns employees array
-            console.log(JSON.stringify(err));
-            callback(result);
+
+        checkInventoryForItem(itemId, function(result) {
+            if (result[0].remainingStock > 0) {
+                connection.query("UPDATE Gift_Items SET QUANTITY = ? where Gift_ID = (SELECT ID FROM Gift where Invitation_ID = ?) AND Item_ID = ?", [quantity, invitationId, itemId], function (err, result) {
+                    // callback function returns employees array
+                    console.log(JSON.stringify(err));
+                    callback(result);
+                });
+            } else {
+                callback(null);
+            }
         });
     }
 }
@@ -158,9 +241,9 @@ exports.removeGiftItemForGuest = function(req, res, callback) {
     var guests = req.session.guests;
     if(guests && guests.length > 0)
     {
-        var invitationId = guests[0].ID;
+        var invitationId = guests[0].InviteID;
         var itemId = req.params.id;
-        connection.query("DELETE FROM Gift_Items where Gift_ID = (SELECT ID FROM GIFT where Invitation_ID = ?) AND Item_ID = ?", [invitationId,itemId], function(err, result) {
+        connection.query("DELETE FROM Gift_Items where Gift_ID = (SELECT ID FROM Gift where Invitation_ID = ?) AND Item_ID = ?", [invitationId,itemId], function(err, result) {
             // callback function returns employees array
             callback(result);
         });

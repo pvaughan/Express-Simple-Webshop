@@ -4,17 +4,16 @@
         <li>
             <span class="quantity">{{this.quantity}}</span>
             <span class="name">{{this.Name}}</span>
-            <span class="price">{{this.Price}}</span>
+            <span class="price">€ {{this.Price}},-</span>
             <span class="remove"><a class="removeItem" data-id="{{this.id}}" href="#"><i class="icon-trash icon-black"></i></a></span>
         </li>
         {{/each}}
         <li><span class="quantity"><i class="icon-shopping-cart icon-black"></i></span><span
                 class="name">TOTAAL</span><span id="totalPrice" class="price"></span></li>
-
     </ul>
 
     <div class="submitCart">
-         <a href="/reviews" class="btn btn-purple xmlhttp-link">Geef cadeau</a>
+         <a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-purple">Geef cadeau</a>
     </div>
 
 </div>

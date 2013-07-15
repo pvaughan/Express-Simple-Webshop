@@ -107,6 +107,25 @@ body {
     margin-top: 10px;
 }
 
+.affix {
+    position: fixed;
+    top: 2px;
+}
+
+.navbar .btn,
+.navbar .btn-group {
+    margin-top: 10px;
+}
+
+.navbar-form input,
+.navbar-form select,
+.navbar-form .radio,
+.navbar-form .checkbox {
+    margin-top: 10px;
+    margin-right: 8px;
+    width: 150px;
+}
+
 .content{
     margin-top: 80px;
 
@@ -187,6 +206,17 @@ body {
     margin-right: 10px;
 }
 
+.row-fluid [class*="span"]:nth-child(3n+4) {
+    margin-left: 0;
+}
+
+.shopItems .span4{
+    height: 500px;
+}
+
+.hero-unit h1{
+    margin-bottom: 10px;
+}
 
 
 .form_box{
@@ -204,6 +234,8 @@ body {
 {
     color: #b2559f;
 }
+
+
 
 .btn-purple
 {
@@ -227,7 +259,7 @@ body {
 
 
 #right_basket ul {
-    width: 100%;
+    width: 96%;
     float: left;
     margin: 12px 0 10px 0;
     border-bottom: 1px solid #d2cbc3;
@@ -256,14 +288,15 @@ body {
 
 .name
 {
-    width: 60%;
+    width: 55%;
     float: left;
 }
 
 .price
 {
-    width: 20%;
+    width: 25%;
     float: left;
+
 }
 
 .remove
@@ -394,6 +427,8 @@ body {
     .carousel-caption .btn {
         font-size: 18px;
     }
+
+
 
     .marketing .span4 + .span4 {
         margin-top: 40px;

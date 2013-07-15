@@ -38,15 +38,16 @@ html.no-js(lang='en')
                             span( class="icon-bar")
                             span( class="icon-bar")
                             span( class="icon-bar")
-                        a(class="brand", href="/") Sven en Laura gaan trouwen
+                        a(class="brand", href="/home") Sven en Laura gaan trouwen
                         div(class="nav-collapse collapse")
                             ul(class="nav")
                                 - var klass = ( page == 'home' ? 'active' : '')
                                 li( class=klass)
-                                    a(href="/") Home
+                                    a(href="/home") Home
                                 - var infoklass = ( page == 'info' ? 'active' : '')
                                 li( class=infoklass)
                                     a(href="/info",class="xmlhttp-link") Informatie
+
                                 - var giftklass = ( page == 'gift' ? 'active' : '')
                                 li(class="dropdown " + giftklass)
                                     a( href="#", class="dropdown-toggle", data-toggle="dropdown") Gasten
@@ -56,6 +57,20 @@ html.no-js(lang='en')
                                                 a(href="/rsvp",class="xmlhttp-link") RSVP
                                             li
                                                 a(href="/reviews",class="xmlhttp-link") Deelnemen aan Cadeau
+                             ul(class="nav pull-right")
+                                 if session.logedIn
+                                     li
+                                        a( href="#")= session.navsuccess
+                                     form.navbar-form.pull-left(METHOD="get",ACTION="/logout")
+                                         button( type="submit", class="btn") Afmelden
+
+                                  else
+                                      form.navbar-form.pull-left(METHOD="post",ACTION="/login")
+                                          input( id="lbl_code", name="code", type="text", placeholder="Persoonlijke Code", class="input-xlarge", required="Code verplicht")
+                                          button( type="submit", class="btn") Aanmelden
+
+
+
 
     div(id ="mainContent")
         block content

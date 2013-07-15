@@ -2,26 +2,39 @@
 extends layout
 block content
     .container.content
-        h1= title
+        .hero-unit
+            h1= title
+            .row
+                .span4
+                    img(width="100%", alt="360x270",class="thumbnail", src="images/gift/kaartvandereis.png")
+                .span5
+                    p   Sven & Laura willen graag de huwelijksreis van hun dromen maken. De reis gaat naar Indonesie. Op deze pagina bieden wij de mogelijkheid om onderdelen van de reis te kiezen en cadeau te geven. Zo maken wij als gasten de droom werkelijkheid :)
 
-        form(class='add-item-form')
-            input(type='text', placeholder='Title', name='Name')
-            input(type='text', placeholder='Text', name='Description')
-            p
-            input(type='file', id='itemPhoto', name='photoFile', multiple='false')
-            p
-            input(type='submit', class='btn', value = 'Add Item')
-        p
+
+        .row(data-spy="affix", data-offset-top="500")
+            div(class="span3 bs-docs-sidebar")
+            div(id="alert_placeholder", class="span9 pull-right")
 
         .row
 
+            div(class="span3 bs-docs-sidebar")
+                div(id="right_basket", class="bs-docs-sidenav", data-spy="affix", data-offset-top="500")
 
             div(class='span9')
-                div(id="items", class="row-fluid")
-            div(id="right_basket", class="span3 bs-docs-sidebar")
+                div(id="items", class="shopItems row-fluid")
 
 
 
+        .modal.hide.fade(id="myModal")
+            form(method="POST",id="GiftFrom",action ="/finaliseGift")
+                .modal-header
+                    button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+                    h3 Cadeau bevestigen
+                    .modal-body
+                        p Je staat op het punt je cadeau definitief te maken. Hierna is het niet meer mogelijk on je mandje aan te passen. Wil je doorgaan?
+                    .modal-footer
+                        a.btn(href='#', data-dismiss='modal') Annuleren
+                        button#submit.btn.btn-purple(name='submit') Bevestigen
 
 
 

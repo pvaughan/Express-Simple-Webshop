@@ -9,6 +9,13 @@
 $(function () {
     "use strict";
 
+    Handlebars.registerHelper('ifCostIsZero', function (options) {
+        if (this.remainingStock > 0) {
+            return options.fn(this);
+        } else {
+            return options.inverse(this);
+        }
+    });
 
     var Item = Backbone.Model.extend({
         urlRoot: '/items'
@@ -33,9 +40,10 @@ $(function () {
     var ItemsList = Backbone.View.extend({
 
         events: {
-            'click .btn-primary': 'addItem'
+            'click .btn-purple': 'addItem'
         },
         addItem: function (e) {
+            e.preventDefault();
             var id = $(e.currentTarget).data("id");
             var found = myStoreItems.get(id);
             if (found) {
@@ -49,7 +57,7 @@ $(function () {
                     var q = item.get("quantity");
                     var neQ = parseFloat(q) + 1;
                     item.set({quantity: neQ});
-                    item.save();
+                    item.save(null,{success : this.success});
                     cart.render();
                 } else {
                     var newItem = new CartItem({
@@ -58,7 +66,7 @@ $(function () {
                         Name: att.Name,
                         Price: att.Price
                     });
-                    newItem.save();
+                    newItem.save(null, {success : this.success});
                     myCart.add(newItem);
                 }
             }
@@ -72,6 +80,18 @@ $(function () {
                     that.$el.html(html);
                 }
             });
+        },
+        success: function success(model, data) {
+            //console.log("items Changed");
+            if (data == null) {
+                view.render();
+                bootstrap_alert.warning('Dit artikel is niet meer beschikbaar');
+            }
+            else {
+                cart.render();
+            }
+
+
         }
     });
 
@@ -90,15 +110,23 @@ $(function () {
                 success: function (itmes) {
                     var html = Handlebars.templates.cart(myCart.toJSON());
                     that.$el.html(html);
-                    $("#totalPrice").html(myCart.cartTotal());
+                    $("#totalPrice").html( "€ " + myCart.cartTotal() + ",-");
                 }
             });
         },
         removeItem: function(e){
             var id = $(e.currentTarget).data("id");
             var item = myCart.get(id);
-            item.destroy();
+            item.destroy({
+                "cache": false,
+                "success": this.success
+            });
             return false;
+        },
+        success: function success(model, data) {
+            //console.log("itemRemoved");
+            view.render();
+            cart.render();
         }
     });
 
@@ -113,36 +141,8 @@ $(function () {
     var cart = new CartView({el: $("#right_basket")});
     var view = new ItemsList({el: $("#items")});
 
-
-    var FormView = Backbone.View.extend({
-        el: $(".container"),
-        events: {
-            'submit .add-item-form': 'postMessage',
-            'change #myGallery': 'dispatchUpdateGalleryPreview'
-        },
-        dispatchUpdateGalleryPreview: function(e) {
-            this.collection.setFromFiles(e.target.files);
-        },
-        postMessage: function (ev) {
-
-            var that = this;
-
-            var itemDetails = $(ev.currentTarget).serializeObject();
-            console.log(itemDetails);
-            var item = new Item();
-            item.save(itemDetails, function (item) {
-                alert(item.toJSON());
-            });
-            view.render();
-            return false;
-        }
-    });
-
-
-
-    var form = new FormView();
-
-    view.render();
     cart.render();
+    view.render();
+
 
 });
