@@ -11,11 +11,64 @@ block content
         .content
 
             .hero-unit
-                h1 All Done!!
+                h1 Cadeau bevestigd
                 .row
-                    .span6
-                        p   Bedank voor je bijdrage :) . Graag het bedrag overmaken naar Paul Vaughan ABN-AMRO 60.67.62.094
+                    .span9
+                        p   Bedank voor je bijdrage :) . Hieronder staat je bestelling. Graag het bedrag voor 24 augustus overmaken naar Paul Vaughan ABN-AMRO 54.89.55.220 onder vermelding van "Cadeau Laura en Sven" + je naam.
 
+        .content
+            h2 Bestelling
+            table.table
+                thead
+                    th Cadeau artikel
+                    th Aantal
+                    th Prijs €
+
+                - each stuff in giftItems
+                    tr
+                        td
+                            p= stuff.Name
+                        td
+                            p= stuff.quantity
+                        td
+                            p= stuff.Price
+                tr
+                    td
+                        p Totaal
+                    td
+                        p
+                    td
+                        p=total
+
+        .content
+
+                 form.form-horizontal.form_box#uploadForm(enctype='multipart/form-data', action='/api/photos', method='post')
+                    fieldset
+                        legend Maak je cadeau persoonlijk
+                        .control-group
+                            label.control-label(for='txtWish') Reistip of wens voor Sven en Laura
+                            .controls
+                                textarea#txtWish(name='txtWish',style="height:300px; width:90%;")
+                        .control-group
+                            label.control-label(for='userPhoto') Kies een foto
+                            .controls
+                                input#userPhotoInput(type='file', name='userPhoto')
+                        .control-group
+                            label.control-label(for='text_NrInStock') Stuur foto en wens
+                            .controls
+                                button.btn.btn-purple#btnUploadPhoto Verstuur
+            .row#resultRow
+                .span4
+                    h2  Reistip of wens
+                    label#uploadedText
+                .span6
+                    img#uploadedImage
+
+            .row
+                .span6#progress
+                    p Relax! Dit duurt een momentje :).
+                    .progress.progress-striped.active
+                        .bar(style='width: 40%;')
 
 
 

@@ -38,6 +38,42 @@ client.account(function(status, reply){
 
 exports.photoUpload = function (req, res, db) {
 
+    var guests = req.session.guests;
+    if(guests && guests.length > 0)
+    {
+        var data =  req.body;
+        var invitationId = guests[0].InviteID;
+        var wish = data.wish;
+        var photo =   req.files.userPhoto;
+
+        var d = new Date();
+        var PhotoName = "GiftPhotos/" + d.toString() + "_Invite" + invitationId + "_" + req.files.userPhoto.name;
+
+        db.saveWishAndPhoto(invitationId, wish, PhotoName, function() {
+            console.log(JSON.stringify(req.files));
+
+            fs.readFile(photo.path, function (err,buf){
+                "use strict";
+                if (err) throw err;
+                client.put(PhotoName, buf, function(status, reply){
+                    var path = reply.path;
+                    console.log(reply);
+
+                    client.media(path, function(status, reply){
+                        console.log(reply);
+                        res.send([reply.url, wish]);
+                });
+            });
+
+        });
+
+        });
+    }
+};
+
+
+
+    /*
     console.log(JSON.stringify(req.files));
     var photo =   req.files.userPhoto;
     var filePath =    photo.path +'/'+ photo.name ;
@@ -67,7 +103,12 @@ exports.photoUpload = function (req, res, db) {
             });
         });
      });
+
+
+
 };
+
+*/
 
 
 

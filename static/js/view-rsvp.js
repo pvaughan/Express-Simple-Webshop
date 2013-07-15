@@ -33,6 +33,7 @@ $(function () {
                     if (items.length == 0) {
                         $("#guestFrom").append("Code niet bekend");
                     } else {
+                        _gaq.push(['_trackEvent', 'RSVP Invite', activationFormCode, 'activation' ]);
                         $('#acticateControl').empty();
                         guestForm.render(items);
                     }
@@ -63,6 +64,7 @@ $(function () {
             var that = this;
             var activationFormCode = $(ev.currentTarget).serializeObject();
             console.log(activationFormCode);
+            _gaq.push(['_trackEvent', 'RSVP Invite', activationFormCode, 'confirm' ]);
             $.post('/rsvp/confirmRVP', activationFormCode,
                 function(data){
                     alert('DONE');
@@ -82,11 +84,6 @@ $(function () {
             this.$el.hide().html(html).slideDown();
         }
     });
-
-
-
-
-
 
     var form = new FormView();
     var guestForm = new GuestList({el: $("#guestFrom")});

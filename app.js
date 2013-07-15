@@ -121,11 +121,21 @@ server.get('/cartItems', function(req, res){
     });
 });
 
-server.post('/finaliseGift',reviews.photoUpload);
+server.post('/finaliseGift', function(req, res){
+    reviews.photoUpload(req, res, sqlServer);
+});
 
 
-
-server.get('/reviews', restrict, reviews.reviews);
+server.get('/reviews', restrict, function (req, res) {
+    sqlServer.checkGiftFinalisedForGuest(req, res, function(committed){
+        if (!committed) {
+            reviews.reviews(req, res);
+        }
+        else {
+            reviews.photoUpload(req, res, sqlServer);
+        }
+    });
+});
 
 server.get('/items', function(req, res){
     sqlServer.getItems(function(itmes) {
@@ -137,9 +147,6 @@ server.get('/env', function(req, res){
         res.send(process.env.VCAP_SERVICES);
 });
 
-
-
-
 server.post('/items', function(req, res){
     sqlServer.addItem(req, res, function(itmem) {
         res.send(itmem);
@@ -147,23 +154,30 @@ server.post('/items', function(req, res){
 });
 
 server.post('/rsvp/code', function (req, res){
-    sqlServer.getGuestWithCode(req, res, function (guests) {
-         if (guests) {
-            var userName =  "";
-            for (var i = 0; i < guests.length; i++) {
-                userName += guests[i].Name + " ";
-            }
 
-            req.session.regenerate(function(){
-                req.session.guests = guests;
-                req.session.guests = guests;
-                req.session.logedIn = true;
-                req.session.navsuccess = 'Hoi ' + userName;
-                req.session.success = 'Authenticated as ' + userName;
-                res.send(guests);
+    sqlServer.activateCode(req, res, function (err) {
+        if (err == null) {
+            sqlServer.getGuestWithCode(req, res, function (guests) {
+                if (guests) {
+                    var userName = "";
+                    for (var i = 0; i < guests.length; i++) {
+                        userName += guests[i].Name + " ";
+                    }
 
+                    req.session.regenerate(function () {
+                        req.session.guests = guests;
+                        req.session.guests = guests;
+                        req.session.logedIn = true;
+                        req.session.navsuccess = 'Hoi ' + userName;
+                        req.session.success = 'Authenticated as ' + userName;
+                        res.send(guests);
+
+                    });
+                }
             });
-         }
+        } else {
+            res.send(guests);
+        }
     });
 });
 

@@ -138,6 +138,16 @@ exports.getAllMedia = function(callback) {
 
 
 
+
+exports.activateCode = function(req, res, callback) {
+    var item = req.body;
+    console.log('Activating code: ' + JSON.stringify(item));
+    connection.query("Update invitation set Activated = 1  WHERE Code = ?", item.code, function(err, results) {
+        callback(err);
+  });
+}
+
+
 exports.getGuestWithCode = function(req, res, callback) {
     var item = req.body;
     console.log('Getting guests for code: ' + JSON.stringify(item));
@@ -249,6 +259,48 @@ exports.removeGiftItemForGuest = function(req, res, callback) {
         });
     }
 }
+
+
+exports.finaliseGiftForGuest = function(req, res, callback) {
+    var guests = req.session.guests;
+    if(guests && guests.length > 0)
+    {
+        var invitationId = guests[0].InviteID;
+        var itemId = req.params.id;
+        connection.query("UPDATE Gift SET Committed=1 WHERE Invitation_ID=? ", [invitationId], function(err, result) {
+            // callback function returns employees array
+            callback(result);
+        });
+    }
+}
+
+
+
+exports.checkGiftFinalisedForGuest = function(req, res, callback) {
+    var guests = req.session.guests;
+    if(guests && guests.length > 0)
+    {
+        var invitationId = guests[0].InviteID;
+        var itemId = req.params.id;
+        connection.query("Select Committed from Gift WHERE Invitation_ID=? ", [invitationId], function(err, result) {
+            // callback function returns employees array
+            var committed = false;
+            if(result.length >0 )
+            {
+                committed=result[0].Committed[0];
+            }
+            callback(committed);
+        });
+    }
+}
+
+exports.saveWishAndPhoto = function(invitationId,wish,photo, callback) {
+    connection.query("UPDATE Gift SET Message=?, Media=? WHERE Invitation_ID=?", [wish,photo,invitationId], function(err, result) {
+        // callback function returns employees array
+        callback();
+    });
+}
+
 
 
 

@@ -33,7 +33,9 @@ $(function () {
         url: '/cartitems',
         model: CartItem,
         cartTotal: function () {
-            return this.reduce(function(memo, value) { return memo +  parseFloat(value.get("Price")) }, 0.00);
+            return this.reduce(function(memo, value) {
+                return memo + parseFloat(value.get("Price"));
+            }, 0.00);
         }
     });
 
@@ -67,6 +69,7 @@ $(function () {
                         Price: att.Price
                     });
                     newItem.save(null, {success : this.success});
+                    _gaq.push(['_trackEvent', 'Shop', newItem.Name, 'product added' ]);
                     myCart.add(newItem);
                 }
             }
@@ -86,6 +89,7 @@ $(function () {
             if (data == null) {
                 view.render();
                 bootstrap_alert.warning('Dit artikel is niet meer beschikbaar');
+                $(".alert").delay(2000).fadeOut(400);
             }
             else {
                 cart.render();
