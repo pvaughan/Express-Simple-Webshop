@@ -186,6 +186,38 @@ server.post('/rsvp/confirmRVP', function (req, res){
 });
 
 
+server.get('/admin',restrict,function (req, res){
+    "use strict";
+    if (req.session.guests) {
+        var grantAcceess = false;
+        var guests = req.session.guests;
+        for (var i = 0; i < guests.length; i++) {
+            if (guests[i].Name == "Marleen" || guests[i].Name == "Paul") {
+                grantAcceess = true;
+                break;
+            }
+        }
+
+        if (grantAcceess) {
+            sqlServer.getAdminPresents(function (itmes) {
+                res.render('admin.jade', {
+                    locals: {
+                        title: 'Paul en Marleen\'s pagina'
+                        , description: 'Hier houden wij alles in de gaten :)'
+                        , author: 'Paul Vaughan'
+                        , page: 'info'
+                        , itmes: itmes
+                        , analyticssiteid: 'UA-38061682-1'
+                    }
+                });
+            });
+        } else {
+            throw new NotFound("You are not allowed to view this page!!!");
+        }
+    }
+});
+
+
 
 
 //Login

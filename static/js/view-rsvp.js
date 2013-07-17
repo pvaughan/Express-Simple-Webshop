@@ -63,7 +63,6 @@ $(function () {
         confirmGuests: function (ev) {
             var that = this;
             var activationFormCode = $(ev.currentTarget).serializeObject();
-            console.log(activationFormCode);
             _gaq.push(['_trackEvent', 'RSVP Invite', activationFormCode, 'confirm' ]);
             $.post('/rsvp/confirmRVP', activationFormCode,
                 function(data){

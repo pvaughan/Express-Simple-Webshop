@@ -302,6 +302,17 @@ exports.saveWishAndPhoto = function(invitationId,wish,photo, callback) {
 }
 
 
+exports.getAdminPresents = function (callback) {
+    connection.query( "SELECT  Code, Name, Description, Price, Quantity, Message, Media, Committed from Items " +
+        "inner join Gift_Items on Items.ID = Gift_Items.Item_ID " +
+        "inner join Gift on Gift_Items.Gift_ID = Gift.ID " +
+        "inner join invitation on invitation.ID = Gift.Invitation_ID", function (err, results, fields) {
+        // callback function returns employees array
+        callback(results);
+    });
+}
+
+
 
 
 

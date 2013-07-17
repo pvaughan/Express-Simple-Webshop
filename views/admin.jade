@@ -1,0 +1,64 @@
+//
+   Created with IntelliJ IDEA.
+   User: pvaughan
+   Date: 7/16/13
+   Time: 8:43 PM
+   To change this template use File | Settings | File Templates.
+
+extends layout
+block content
+    .container
+        .content
+
+            .hero-unit
+                h1= title
+                .row
+                    .span9
+                        p= description
+
+        .content
+            h2 Bestelling
+            table.table
+                thead
+                    th Gast code
+                    th Cadeau artikel
+                    th Aantal
+                    th Prijs €
+                    th wens
+                    th Media
+                    th Verzonden
+
+
+                - each stuff in itmes
+                    tr
+                        td
+                            p= stuff.Code
+                        td
+                            p= stuff.Name
+                        td
+                            p= stuff.Quantity
+                        td
+                            p= stuff.Price
+                        td
+                            p= stuff.Message
+                        td
+                            p= stuff.Media
+                        td
+                            p= stuff.Committed[0]
+                tr
+                    td
+                        p Totaal
+                    td
+                        p
+                    td
+                        p
+                    td
+                        p 0
+                    td
+                        p
+                    td
+                        p
+                    td
+                        p
+
+

@@ -63,6 +63,7 @@ $(document).ready(function() {
             if(isImage(file.name))
             {
                 formData.append('userPhoto', file);
+                $(".alert").fadeOut(10);
                 valid = true;
             }else
             {
@@ -80,6 +81,10 @@ $(document).ready(function() {
             xhr.send(formData);  // multipart/form-data
             $("#uploadForm").hide();
             $("#progress").show();
+        }      else
+        {
+            bootstrap_alert.warning('Er is geen geldige foto geselecteerd, dit kan alleen op pc of latop');
+            $(".alert").delay(3000).fadeOut(400);
         }
     }
 

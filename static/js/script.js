@@ -16,6 +16,13 @@ $.fn.serializeObject = function () {
     return o;
 };
 
+
+bootstrap_alert = function() {}
+bootstrap_alert.warning = function(message) {
+    $('#alert_placeholder').html('<div class="alert"><a class="close" data-dismiss="alert">×</a><span><strong>Ahhh snap! </strong> '+message+'</span></div>')
+}
+
+
 $(document).ready(function () {
     /*
     var socket = io.connect();
@@ -46,14 +53,5 @@ $(document).ready(function () {
             }, false);
         }
     }
-
-    bootstrap_alert = function() {}
-    bootstrap_alert.warning = function(message) {
-        $('#alert_placeholder').html('<div class="alert"><a class="close" data-dismiss="alert">×</a><span><strong>Ahhh snap! </strong> '+message+'</span></div>')
-    }
-
-
-
-
 
 });
