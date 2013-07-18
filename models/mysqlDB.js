@@ -159,19 +159,30 @@ exports.getGuestWithCode = function(req, res, callback) {
     });
 }
 
-exports.updateGuestWithRSVP = function(req, res) {
+exports.updateGuestWithRSVP = function(req, res, callback) {
     var rspv = req.body;
 
-    for(var i = 0; i <  rspv.user_id.length; i++)
-    {
-       var userId =  parseInt(rspv.user_id[i]);
-       var diet =  rspv.text_diet[i];
-       var attend =  rspv.dropd_attend[i] == "1" ?true:false ;
-       console.log('Updating user: ' + userId + ' attend: ' + attend + ' diet: ' + diet );
-       connection.query("UPDATE Guest SET Present=?, Comment=? WHERE ID=?", [attend,diet,userId], function(err, result) {
+    if (rspv.user_id instanceof Array) {
+        for(var i = 0; i <  rspv.user_id.length; i++)
+        {
+            var userId =  parseInt(rspv.user_id[i]);
+            var diet =  rspv.text_diet[i];
+            var attend =  rspv.dropd_attend[i] == "1" ?true:false ;
+            console.log('Updating user: ' + userId + ' attend: ' + attend + ' diet: ' + diet );
+            connection.query("UPDATE Guest SET Present=?, Comment=? WHERE ID=?", [attend,diet,userId], function(err, result) {
+                console.log(err);
+            });
+        }
+    } else {
+       var userId =  parseInt(rspv.user_id);
+        var diet =  rspv.text_diet;
+        var attend =  rspv.dropd_attend == "1" ?true:false ;
+        console.log('Updating user: ' + userId + ' attend: ' + attend + ' diet: ' + diet );
+        connection.query("UPDATE Guest SET Present=?, Comment=? WHERE ID=?", [attend,diet,userId], function(err, result) {
             console.log(err);
-       });
+        });
     }
+
 }
 
 //Gift Items
