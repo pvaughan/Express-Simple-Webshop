@@ -110,6 +110,8 @@ body {
 .affix {
     position: fixed;
     top: 2px;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
 .navbar .btn,
@@ -392,6 +394,48 @@ body {
         max-width: 40%;
         margin: 0 auto 20px;
     }
+
+    .row-fluid .span4 {
+        width: 48%;
+        *width: 31.43852121782062%;
+    }
+
+    .span9
+    {
+        margin-left: 60px;
+        width: 498px;
+    }
+
+
+
+    #right_basket {
+        width: 220px;
+    }
+
+    #right_basket h2{
+        font-size: 24px;;
+    }
+
+
+    #right_basket ul {
+       width: 90%;
+    }
+
+    .hero-unit{
+        padding: 30px;
+    }
+
+    .span5 {
+        width: 390px;
+    }
+
+    .row-fluid [class*="span"]:first-child {
+        margin-left: 4px;;
+    }
+
+    .row-fluid [class*="span"]:nth-child(1n) {
+        margin-left: 8px;
+    }
 }
 
 
@@ -427,6 +471,9 @@ body {
     .carousel-caption .btn {
         font-size: 18px;
     }
+
+
+
 
 
 

@@ -72,8 +72,7 @@ $(document).ready(function() {
         }
         formData.append('wish', wish);
 
-        if(valid)
-        {
+        if(valid) {
             var xhr = new XMLHttpRequest();
             xhr.open('POST', '/api/photos', true);
             xhr.onload = handler;
@@ -81,8 +80,8 @@ $(document).ready(function() {
             xhr.send(formData);  // multipart/form-data
             $("#uploadForm").hide();
             $("#progress").show();
-        }      else
-        {
+        }
+        else{
             bootstrap_alert.warning('Er is geen geldige foto geselecteerd, dit kan alleen op pc of latop');
             $(".alert").delay(3000).fadeOut(400);
         }
