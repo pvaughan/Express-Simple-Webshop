@@ -34,8 +34,8 @@ block content
                 ul(id='receiver')
               p
                   | Op 14 september zullen Sven en Laura elkaar het jawoord geven in het Schielandshuis te Rotterdam.
-                  | De Rijksvoorlichtingsdienst  heeft bekend gemaakt dat het officiële afscheid van koningin Beatrix ook op 14 september plaatsvindt in Rotterdam.
-                  | Actuele informatie die van belang is de bruiloft zal op de website worden geplaatst.
+                  | Eerder heeft de Rijksvoorlichtingsdienst bekend gemaakt dat het officiële afscheid van koningin Beatrix ook op 14 september zou plaatsvinden in Rotterdam.Dit is inmiddels niet meer het geval, i.v.m. het overlijden van prins Friso.
+                  | Er zal dus geen extra hinder door onstaan.
               p
                   a.btn(href='/info',class="btn-purple xmlhttp-link") Lees meer »
             .span4
@@ -54,5 +54,21 @@ block content
               p
                 a.btn(href='/reviews',class="btn-purple xmlhttp-link") Doe mee »
         hr
+
+block script
+    script(type='text/javascript')
+        !function ($) {
+            $(function(){
+                //carousel
+                $('#myCarousel').carousel();
+                $("#myCarousel").swiperight(function() {
+                    $("#myCarousel").carousel('prev');
+                });
+
+                $("#myCarousel").swipeleft(function() {
+                    $("#myCarousel").carousel('next');
+                });
+            })
+        }(window.jQuery)
 
 

@@ -182,8 +182,12 @@ server.post('/rsvp/code', function (req, res){
 });
 
 server.post('/rsvp/confirmRVP', function (req, res){
-    sqlServer.updateGuestWithRSVP(req, res);
+    sqlServer.updateGuestWithRSVP(req, res, function(result){
+        "use strict";
+        res.send(result);
+    });
 });
+
 
 
 server.get('/admin',restrict,function (req, res){

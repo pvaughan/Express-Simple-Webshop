@@ -237,8 +237,6 @@ body {
     color: #b2559f;
 }
 
-
-
 .btn-purple
 {
     color: #ffffff;
@@ -406,6 +404,9 @@ body {
         width: 498px;
     }
 
+    h3 {
+        font-size: 17px;
+    }
 
 
     #right_basket {
@@ -472,7 +473,9 @@ body {
         font-size: 18px;
     }
 
-
+    h3 {
+        font-size: 17px;
+    }
 
 
 

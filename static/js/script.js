@@ -36,13 +36,7 @@ $(document).ready(function () {
     */
     $.ajaxSetup({ cache: false });
 
-    $("#myCarousel").swiperight(function() {
-        $("#myCarousel").carousel('prev');
-    });
 
-    $("#myCarousel").swipeleft(function() {
-        $("#myCarousel").carousel('next');
-    });
 
     if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) {
         var viewportmeta = document.querySelector('meta[name="viewport"]');

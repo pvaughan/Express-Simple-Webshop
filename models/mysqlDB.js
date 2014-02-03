@@ -92,7 +92,7 @@ var dbConnChecker = setInterval(function(){
         console.log('not connected, attempting reconnect');
         attemptConnection();
     }
-}, 30000);
+}, 500);
 
 
 exports.getItems = function (callback) {
@@ -159,30 +159,41 @@ exports.getGuestWithCode = function(req, res, callback) {
     });
 }
 
+
+function updateGuestWithRSVPRecursive (index, rspv, callback) {
+
+    var userId =  parseInt(rspv.user_id[index]);
+    var diet =  rspv.text_diet[index];
+    var attend =  rspv.dropd_attend[index] == "1" ?true:false;
+
+    connection.query("UPDATE Guest SET Present=?, Comment=? WHERE ID=?", [attend,diet,userId], function(err, result) {
+        if(err != null)
+            console.log(err);
+        index = index+1;
+        if( index <  rspv.user_id.length) {
+            updateGuestWithRSVPRecursive(index, rspv, callback);
+        }
+        else {
+            callback(result);
+        }
+      });
+}
+
 exports.updateGuestWithRSVP = function(req, res, callback) {
     var rspv = req.body;
-
+    console.log('Updating rsvp: ' + JSON.stringify(rspv)  );
     if (rspv.user_id instanceof Array) {
-        for(var i = 0; i <  rspv.user_id.length; i++)
-        {
-            var userId =  parseInt(rspv.user_id[i]);
-            var diet =  rspv.text_diet[i];
-            var attend =  rspv.dropd_attend[i] == "1" ?true:false ;
-            console.log('Updating user: ' + userId + ' attend: ' + attend + ' diet: ' + diet );
-            connection.query("UPDATE Guest SET Present=?, Comment=? WHERE ID=?", [attend,diet,userId], function(err, result) {
-                console.log(err);
-            });
-        }
+        updateGuestWithRSVPRecursive (0, rspv, callback);
     } else {
-       var userId =  parseInt(rspv.user_id);
+        var userId =  parseInt(rspv.user_id);
         var diet =  rspv.text_diet;
-        var attend =  rspv.dropd_attend == "1" ?true:false ;
+        var attend =  rspv.dropd_attend == "1" ? true : false;
         console.log('Updating user: ' + userId + ' attend: ' + attend + ' diet: ' + diet );
         connection.query("UPDATE Guest SET Present=?, Comment=? WHERE ID=?", [attend,diet,userId], function(err, result) {
             console.log(err);
+            callback(result);
         });
     }
-
 }
 
 //Gift Items

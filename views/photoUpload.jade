@@ -42,21 +42,22 @@ block content
 
         .content
                  div(id="alert_placeholder", class="span12")
-                 form.form-horizontal.form_box#uploadForm(enctype='multipart/form-data', action='/api/photos', method='post')
-                    fieldset
-                        legend Maak je cadeau persoonlijk
-                        .control-group
-                            label.control-label(for='txtWish') Reistip of wens voor Sven en Laura
-                            .controls
-                                textarea#txtWish(name='txtWish',style="height:300px; width:90%;")
-                        .control-group
-                            label.control-label(for='userPhoto') Kies een foto
-                            .controls
-                                input#userPhotoInput(type='file', name='userPhoto')
-                        .control-group
-                            label.control-label(for='text_NrInStock') Stuur foto en wens
-                            .controls
-                                button.btn.btn-purple#btnUploadPhoto Verstuur
+                //
+                    form.form-horizontal.form_box#uploadForm(enctype='multipart/form-data', action='/api/photos', method='post')
+                        fieldset
+                            legend Maak je cadeau persoonlijk
+                            .control-group
+                                label.control-label(for='txtWish') Reistip of wens voor Sven en Laura
+                                .controls
+                                    textarea#txtWish(name='txtWish',style="height:300px; width:90%;")
+                            .control-group
+                                label.control-label(for='userPhoto') Kies een foto
+                                .controls
+                                    input#userPhotoInput(type='file', name='userPhoto')
+                            .control-group
+                                label.control-label(for='text_NrInStock') Stuur foto en wens
+                                .controls
+                                    button.btn.btn-purple#btnUploadPhoto Verstuur
             .row#resultRow
                 .span4
                     h2  Reistip of wens
